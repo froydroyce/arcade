@@ -4,9 +4,10 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-
+var gamesRouter = require('./routes/api/v1/games');
 var app = express();
 
+app.use('/api/v1/games', gamesRouter);
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
